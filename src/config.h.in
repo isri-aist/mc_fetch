@@ -1,4 +1,5 @@
 #pragma once
 
 constexpr auto FETCH_DESCRIPTION_PATH = "@FETCH_DESCRIPTION_PATH@";
+constexpr auto MC_FETCH_DESCRIPTION_PATH = "@MC_FETCH_DESCRIPTION_PATH@";
 constexpr auto FETCH_NAME = "@FETCH_NAME@";

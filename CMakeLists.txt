@@ -18,8 +18,14 @@ if(${fetch_description_FOUND})
   endif()
   set(FETCH_NAME "fetch")
 endif()
-
 message("-- FETCH_DESCRIPTION_PATH: ${FETCH_DESCRIPTION_PATH}")
+
+find_description_package(mc_fetch_description)
+if(${mc_fetch_description_FOUND})
+  set(MC_EFETCH_DESCRIPTION_PATH ${mc_fetch_description_SOURCE_PREFIX})
+endif()
+message("-- MC_FETCH_DESCRIPTION_PATH: ${MC_FETCH_DESCRIPTION_PATH}")
+
 configure_file(src/config.h.in "${CMAKE_CURRENT_BINARY_DIR}/include/config.h")
 
 add_robot(fetch src/fetch.cpp src/fetch.h)
