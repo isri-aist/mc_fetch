@@ -26,16 +26,18 @@ namespace mc_robots
   void FetchRobotModule::setupCommon()
   {
     using namespace mc_rtc::constants;
-    _stance["torso_lift_joint"]     = {toRad(3.0)       }; // TODO: different from fetcheus
-    _stance["shoulder_pan_joint"]   = {toRad(75.6304)   };
-    _stance["shoulder_lift_joint"]  = {toRad(80.2141)   };
-    _stance["upperarm_roll_joint"]  = {toRad(-11.4592)  };
-    _stance["elbow_flex_joint"]     = {toRad(98.5487)   };
-    _stance["forearm_roll_joint"]   = {toRad(0.0)       };
-    _stance["wrist_flex_joint"]     = {toRad(95.111)    };
-    _stance["wrist_roll_joint"]     = {toRad(0.0)       };
-    _stance["hed_pan_joint"]        = {toRad(0.0)       };
-    _stance["head_tilt_joint"]      = {toRad(0.0)       };
+    _stance["torso_lift_joint"]       = {toRad(3.0)       }; // TODO: different from fetcheus
+    _stance["shoulder_pan_joint"]     = {toRad(75.6304)   };
+    _stance["shoulder_lift_joint"]    = {toRad(80.2141)   };
+    _stance["upperarm_roll_joint"]    = {toRad(-11.4592)  };
+    _stance["elbow_flex_joint"]       = {toRad(98.5487)   };
+    _stance["forearm_roll_joint"]     = {toRad(0.0)       };
+    _stance["wrist_flex_joint"]       = {toRad(95.111)    };
+    _stance["wrist_roll_joint"]       = {toRad(0.0)       };
+    _stance["hed_pan_joint"]          = {toRad(0.0)       };
+    _stance["head_tilt_joint"]        = {toRad(0.0)       };
+    _stance["l_gripper_finger_joint"] = {0.01             }; // finger links are from 0 to 0.05
+    _stance["r_gripper_finger_joint"] = {0.01             };
 
     _ref_joint_order = {
       "torso_lift_joint",
@@ -48,10 +50,12 @@ namespace mc_robots
       "wrist_roll_joint",
       "head_pan_joint",
       "head_tilt_joint",
+      "l_gripper_finger_joint",
+      "r_gripper_finger_joint"
     };
 
     _minimalSelfCollisions = {
-      // TODO: fingers cannot be included because they does not have dae mesh file in fetch_description
+      // fingers cannot be included because they does not have dae mesh file in fetch_description
       mc_rbdyn::Collision("base_link", "elbow_flex_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("base_link", "forearm_roll_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("base_link", "wrist_flex_link", 0.01, 0.001, 0.),
@@ -65,7 +69,9 @@ namespace mc_robots
       mc_rbdyn::Collision("torso_lift_link", "gripper_link", 0.01, 0.001, 0.),
     };
 
-    // TODO: consider gripper
+    // define grippers
+    _gripperSafety = {0.15, 1.0};
+    _grippers = {{"gripper", {"l_gripper_finger_joint", "r_gripper_finger_joint"}, false}};
 
     // TODO: define force sensors
   }
