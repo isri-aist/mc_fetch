@@ -73,6 +73,8 @@ namespace mc_robots
     _gripperSafety = {0.15, 1.0};
     _grippers = {{"gripper", {"l_gripper_finger_joint", "r_gripper_finger_joint"}, false}};
 
+    _bodySensors.emplace_back("FloatingBase", "base_link", sva::PTransformd::Identity());
+
     // TODO: define force sensors
   }
 
