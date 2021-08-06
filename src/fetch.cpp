@@ -61,12 +61,16 @@ namespace mc_robots
       mc_rbdyn::Collision("base_link", "wrist_flex_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("base_link", "wrist_roll_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("base_link", "gripper_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("base_link", "r_gripper_finger_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("base_link", "l_gripper_finger_link", 0.01, 0.001, 0.),
 
       mc_rbdyn::Collision("torso_lift_link", "elbow_flex_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("torso_lift_link", "forearm_roll_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("torso_lift_link", "wrist_flex_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("torso_lift_link", "wrist_roll_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("torso_lift_link", "gripper_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("torso_lift_link", "r_gripper_finger_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("torso_lift_link", "l_gripper_finger_link", 0.01, 0.001, 0.),
     };
 
     // define grippers
