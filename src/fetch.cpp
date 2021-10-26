@@ -36,8 +36,8 @@ namespace mc_robots
     _stance["wrist_roll_joint"]       = {toRad(0.0)       };
     _stance["hed_pan_joint"]          = {toRad(0.0)       };
     _stance["head_tilt_joint"]        = {toRad(0.0)       };
-    _stance["l_gripper_finger_joint"] = {0.01             }; // finger links are from 0 to 0.05
-    _stance["r_gripper_finger_joint"] = {0.01             };
+    _stance["l_gripper_finger_joint"] = {0.04             }; // finger links are from 0 to 0.05
+    _stance["r_gripper_finger_joint"] = {0.04             };
 
     _ref_joint_order = {
       "torso_lift_joint",
@@ -74,7 +74,7 @@ namespace mc_robots
     };
 
     // define grippers
-    _gripperSafety = {0.15, 1.0};
+    _gripperSafety = {0.15, 0.01, 0.002};
     _grippers = {{"gripper", {"l_gripper_finger_joint", "r_gripper_finger_joint"}, false}};
 
     _bodySensors.emplace_back("MobileBase", "base_link", sva::PTransformd::Identity()); // in order to update base pose from odometry
