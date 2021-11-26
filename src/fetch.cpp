@@ -26,7 +26,7 @@ namespace mc_robots
   void FetchRobotModule::setupCommon()
   {
     using namespace mc_rtc::constants;
-    _stance["torso_lift_joint"]       = {toRad(3.0)       }; // TODO: different from fetcheus
+    _stance["torso_lift_joint"]       = {toRad(3.0)       };
     _stance["shoulder_pan_joint"]     = {toRad(75.6304)   };
     _stance["shoulder_lift_joint"]    = {toRad(80.2141)   };
     _stance["upperarm_roll_joint"]    = {toRad(-11.4592)  };
@@ -78,8 +78,6 @@ namespace mc_robots
     _grippers = {{"gripper", {"l_gripper_finger_joint", "r_gripper_finger_joint"}, false}};
 
     _bodySensors.emplace_back("MobileBase", "base_link", sva::PTransformd::Identity()); // in order to update base pose from odometry
-
-    // TODO: define force sensors
   }
 
   void FetchRobotModule::findConvexes(const std::string &convexPath)
