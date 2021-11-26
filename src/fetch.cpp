@@ -55,7 +55,6 @@ namespace mc_robots
     };
 
     _minimalSelfCollisions = {
-      // fingers cannot be included because they does not have dae mesh file in fetch_description
       mc_rbdyn::Collision("base_link", "elbow_flex_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("base_link", "forearm_roll_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("base_link", "wrist_flex_link", 0.01, 0.001, 0.),
