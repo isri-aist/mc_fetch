@@ -34,7 +34,7 @@ namespace mc_robots
     _stance["forearm_roll_joint"]     = {toRad(0.0)       };
     _stance["wrist_flex_joint"]       = {toRad(95.111)    };
     _stance["wrist_roll_joint"]       = {toRad(0.0)       };
-    _stance["hed_pan_joint"]          = {toRad(0.0)       };
+    _stance["head_pan_joint"]         = {toRad(0.0)       };
     _stance["head_tilt_joint"]        = {toRad(0.0)       };
     _stance["l_gripper_finger_joint"] = {0.04             }; // finger links are from 0 to 0.05
     _stance["r_gripper_finger_joint"] = {0.04             };
