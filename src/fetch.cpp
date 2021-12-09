@@ -29,7 +29,7 @@ namespace mc_robots
     _stance["torso_lift_joint"]       = {toRad(3.0)       };
     _stance["shoulder_pan_joint"]     = {toRad(75.6304)   };
     _stance["shoulder_lift_joint"]    = {toRad(80.2141)   };
-    _stance["upperarm_roll_joint"]    = {toRad(-11.4592)  };
+    _stance["upperarm_roll_joint"]    = {toRad(-18.0)     };
     _stance["elbow_flex_joint"]       = {toRad(98.5487)   };
     _stance["forearm_roll_joint"]     = {toRad(0.0)       };
     _stance["wrist_flex_joint"]       = {toRad(95.111)    };
