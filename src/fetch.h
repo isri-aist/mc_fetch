@@ -5,8 +5,6 @@
 #include <boost/filesystem.hpp>
 namespace bfs = boost::filesystem;
 
-#include <mc_rbdyn_urdf/urdf.h>
-
 #include <mc_robots/api.h>
 
 namespace mc_robots
@@ -24,7 +22,6 @@ protected:
 public:
   std::vector<std::string> virtualLinks;
   std::vector<std::string> gripperLinks;
-  mc_rbdyn_urdf::Limits limits;
 };
 
 } // namespace mc_robots
