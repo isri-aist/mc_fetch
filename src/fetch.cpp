@@ -55,6 +55,7 @@ namespace mc_robots
     };
 
     _minimalSelfCollisions = {
+      mc_rbdyn::Collision("base_link", "upperarm_roll_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("base_link", "elbow_flex_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("base_link", "forearm_roll_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("base_link", "wrist_flex_link", 0.01, 0.001, 0.),
@@ -63,6 +64,7 @@ namespace mc_robots
       mc_rbdyn::Collision("base_link", "r_gripper_finger_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("base_link", "l_gripper_finger_link", 0.01, 0.001, 0.),
 
+      mc_rbdyn::Collision("torso_lift_link", "upperarm_roll_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("torso_lift_link", "elbow_flex_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("torso_lift_link", "forearm_roll_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("torso_lift_link", "wrist_flex_link", 0.01, 0.001, 0.),
@@ -70,6 +72,55 @@ namespace mc_robots
       mc_rbdyn::Collision("torso_lift_link", "gripper_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("torso_lift_link", "r_gripper_finger_link", 0.01, 0.001, 0.),
       mc_rbdyn::Collision("torso_lift_link", "l_gripper_finger_link", 0.01, 0.001, 0.),
+
+      mc_rbdyn::Collision("head_pan_link", "shoulder_lift_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_pan_link", "upperarm_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_pan_link", "elbow_flex_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_pan_link", "forearm_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_pan_link", "wrist_flex_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_pan_link", "wrist_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_pan_link", "gripper_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_pan_link", "r_gripper_finger_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_pan_link", "l_gripper_finger_link", 0.01, 0.001, 0.),
+
+      mc_rbdyn::Collision("head_tilt_link", "shoulder_lift_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_tilt_link", "upperarm_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_tilt_link", "elbow_flex_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_tilt_link", "forearm_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_tilt_link", "wrist_flex_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_tilt_link", "wrist_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_tilt_link", "gripper_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_tilt_link", "r_gripper_finger_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("head_tilt_link", "l_gripper_finger_link", 0.01, 0.001, 0.),
+
+      mc_rbdyn::Collision("l_gripper_finger_link", "shoulder_pan_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("l_gripper_finger_link", "shoulder_lift_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("l_gripper_finger_link", "upperarm_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("l_gripper_finger_link", "shoulder_lift_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("l_gripper_finger_link", "upperarm_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("l_gripper_finger_link", "elbow_flex_link", 0.01, 0.001, 0.),
+
+      mc_rbdyn::Collision("r_gripper_finger_link", "shoulder_pan_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("r_gripper_finger_link", "shoulder_lift_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("r_gripper_finger_link", "upperarm_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("r_gripper_finger_link", "shoulder_lift_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("r_gripper_finger_link", "upperarm_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("r_gripper_finger_link", "elbow_flex_link", 0.01, 0.001, 0.),
+
+      mc_rbdyn::Collision("gripper_link", "shoulder_pan_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("gripper_link", "shoulder_lift_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("gripper_link", "upperarm_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("gripper_link", "shoulder_lift_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("gripper_link", "upperarm_roll_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("gripper_link", "elbow_flex_link", 0.01, 0.001, 0.),
+
+      mc_rbdyn::Collision("wrist_roll_link", "shoulder_pan_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("wrist_roll_link", "shoulder_lift_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("wrist_roll_link", "upperarm_roll_link", 0.01, 0.001, 0.),
+
+      mc_rbdyn::Collision("wrist_flex_link", "shoulder_pan_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("wrist_flex_link", "shoulder_lift_link", 0.01, 0.001, 0.),
+      mc_rbdyn::Collision("wrist_flex_link", "upperarm_roll_link", 0.01, 0.001, 0.)
     };
 
     // define grippers
