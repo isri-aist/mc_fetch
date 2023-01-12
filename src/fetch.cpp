@@ -124,7 +124,7 @@ namespace mc_robots
     };
 
     // define grippers
-    _gripperSafety = {0.3, 0.01, 0.002};
+    _gripperSafety = {0.3, 0.02, 0.002};
     _grippers = {{"gripper", {"l_gripper_finger_joint", "r_gripper_finger_joint"}, false}};
 
     _bodySensors.emplace_back("MobileBase", "base_link", sva::PTransformd::Identity()); // in order to update base pose from odometry
