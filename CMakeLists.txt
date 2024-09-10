@@ -22,7 +22,7 @@ message("-- FETCH_DESCRIPTION_PATH: ${FETCH_DESCRIPTION_PATH}")
 
 find_description_package(mc_fetch_description)
 if(${mc_fetch_description_FOUND})
-  set(MC_EFETCH_DESCRIPTION_PATH ${mc_fetch_description_SOURCE_PREFIX})
+  set(MC_FETCH_DESCRIPTION_PATH ${mc_fetch_description_SOURCE_PREFIX})
 endif()
 message("-- MC_FETCH_DESCRIPTION_PATH: ${MC_FETCH_DESCRIPTION_PATH}")
 
